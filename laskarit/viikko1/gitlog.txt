@@ -1,0 +1,113 @@
+commit aaf3004b499db8dec7a48eff4d855a2662358dca
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Wed Oct 27 07:17:54 2021 +0000
+
+    poisto ja uudelleennimeys
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3cd257f1f3770ec2e02cb9fbceb20be46ab6fb19
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Wed Oct 27 07:11:31 2021 +0000
+
+    tiedostoja lisätty
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d3821c0d8f0b66117dc96651bf880936b432a931
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Wed Oct 27 07:04:09 2021 +0000
+
+    muutoksia
+
+ eka.txt    | 14 +++-----------
+ kolmas.txt |  3 ++-
+ 2 files changed, 5 insertions(+), 12 deletions(-)
+
+commit ee4ca443ef054be893d17bd4cc2d9b57546c87da
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Wed Oct 27 07:02:14 2021 +0000
+
+    tiedoston nimen vaihto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 76ce111225f435613f702ea0f72f65c364d1d158
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Wed Oct 27 06:59:46 2021 +0000
+
+    tiedoston poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d8d4d80f9ef555aa0030a7c8e21e4bfa988d9e1d
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:36:04 2021 +0000
+
+    pieniä muutoksia
+
+ tiedosto.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 149199986641393f4b771eaa1d32503c0b7ab44e
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:34:31 2021 +0000
+
+    lisätty tekstiä
+
+ tiedosto.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit c8fd1555a91bba4134c98be99fd2a4eaf0b5fd71
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:21:23 2021 +0000
+
+    stuff kansio lisätty
+
+ stuff/tyoajat.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0ed593b5b127a7138fa8f2d28defeecb178b1daa
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:19:07 2021 +0000
+
+    muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit ecdec36ef3a347b97ae0b4ba3c31917deb61cb47
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:17:48 2021 +0000
+
+    kolmas.txt lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8f9d0839b53bfae18b2ac4177ce0fbc279a22cda
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:10:14 2021 +0000
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit d01645a15e48193f40c3d136e958f83979e78bd5
+Author: Shmuli02 <samuli.kaleva@gmail.com>
+Date:   Tue Oct 26 13:06:07 2021 +0000
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
