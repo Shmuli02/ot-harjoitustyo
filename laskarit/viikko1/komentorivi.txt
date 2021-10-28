@@ -1,0 +1,24 @@
+.
+├── Desktop -> /home/ad/home/k/ksamuli/Desktop
+├── Documents -> /home/ad/home/k/ksamuli/Documents
+├── Downloads -> /home/ad/home/k/ksamuli/Downloads
+├── kurssit
+│   ├── ot2021
+│   └── viikko1
+│       ├── temp
+│       │   └── __MACOSX
+│       └── unicafe
+│           ├── poetry.lock
+│           ├── pyproject.toml
+│           └── src
+│               ├── index.py
+│               ├── kassapaate.py
+│               ├── maksukortti.py
+│               └── tests
+│                   ├── __init__.py
+│                   └── maksukortti_test.py
+├── Music
+├── Pictures
+├── Public
+├── Templates
+└── Videos
