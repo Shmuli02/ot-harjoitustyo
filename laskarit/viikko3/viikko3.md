@@ -1,7 +1,7 @@
 # Viikko 3 luokkakaaviot ja sekvenssikaaviot
 
 
-## Monopolli
+## Monopoli
 ![Monopoli](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.drawio.png)
 
 
