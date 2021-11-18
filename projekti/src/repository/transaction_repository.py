@@ -1,3 +1,7 @@
+from transaction import Transaction
+
+def get_transactions_by_row(row):
+    return Transaction(row['house_id'],row['category_id'],row['amount'],row['description'],row['transaction_type']) if row else None
 
 
 class TransactionsRepository:
@@ -13,7 +17,8 @@ class TransactionsRepository:
         )
 
         self._connection.commit()
-    
+        return cursor.lastrowid
+
     def add_expense(self,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
 
@@ -22,6 +27,7 @@ class TransactionsRepository:
             (category_id,house_id,amount,description)
         )
         self._connection.commit()
+        return cursor.lastrowid
     
     def get_transactions(self):
 
@@ -31,19 +37,19 @@ class TransactionsRepository:
 
         row = cursor.fetchall()
 
-        return row
+        return list(map(get_transactions_by_row,row))
 
     def get_incomes(self):
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM transactions WHERE transaction_type="income"')
         row = cursor.fetchall()
-        return row
+        return list(map(get_transactions_by_row,row))
 
     def get_expenses(self):
         cursor = self._connection.cursor()
         cursor.execute('SELECT * FROM transactions WHERE transaction_type="expense"')
         row = cursor.fetchall()
-        return row
+        return list(map(get_transactions_by_row,row))
 
     def delete_all(self):
         cursor = self._connection.cursor()
