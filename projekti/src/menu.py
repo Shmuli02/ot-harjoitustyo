@@ -3,7 +3,8 @@ from repository.house_repository import HouseRepository
 from repository.transaction_repository import TransactionsRepository
 
 class Menu:
-    def __init__(self):
+    def __init__(self,ui):
+        self.ui = ui
         self.commands = [
             {'command':'1','description':'Raportti'},
             {'command':'2','description':'Asunnot'},
@@ -14,22 +15,23 @@ class Menu:
         ]
         self._house_repository = HouseRepository(get_database_connection())
         self._transaction_repository = TransactionsRepository(get_database_connection())
-        self.houses = self._house_repository.get_houses()
-        
-    def print_commands(self):
-        print('Saatavilla olevat ominaisuudet:')
-        for command in self.commands:
-            print(f"{command['command']} {command['description']}")
+        self.setup_houses()
     
     def setup_houses(self):
         self.houses = self._house_repository.get_houses()
-
+        self.transactions = self._transaction_repository.get_transactions()
+        
+    def print_commands(self):
+        self.ui.print('Saatavilla olevat ominaisuudet:')
+        for command in self.commands:
+            self.ui.print(f"{command['command']} {command['description']}")
+    
     def command_line_runner(self):
         
         self.print_commands()
         
         while True:
-            command = input('komento: ')
+            command = self.ui.read('komento: ')
 
             if command == '1':
                 self.print_report()
@@ -46,21 +48,21 @@ class Menu:
             elif command == 'X':
                 break
             else:
-                print('Väärä syöte')
+                self.ui.print('Väärä syöte')
     
     def print_report(self):
         pass
 
     def print_houses(self):
         if len(self.houses) == 0:
-            print('ei asuntoja')
+            self.ui.print('ei asuntoja')
         else:
             for house in self.houses:
-                print(f"{house.id} {house.name}  {house.address}")
+                self.ui.print(f"{house.id} {house.name}  {house.address}")
 
     def new_house(self):
-        new_house_name = input('Asunnon nimi: ')
-        new_house_address = input('Osoite: ')
+        new_house_name = self.ui.read('Asunnon nimi: ')
+        new_house_address = self.ui.read('Osoite: ')
         self._house_repository.create_house(new_house_name,new_house_address)
         self.setup_houses()
 
@@ -80,19 +82,19 @@ class Menu:
         ]
         
         while True:
-            command = input('Komento: ')
+            command = self.ui.read('Komento: ')
 
             if command == '1':
-                house_id = input('Talo id: ')
-                category_id = input('Kategoria: ')
-                amount = input('Summa: ')
-                description = input('Selite: ')
+                house_id = self.ui.read('Talo id: ')
+                category_id = self.ui.read('Kategoria: ')
+                amount = self.ui.read('Summa: ')
+                description = self.ui.read('Selite: ')
                 new_transaction = self._transaction_repository.add_income(house_id,category_id,amount,description)
             elif command == '2':
-                house_id = input('Talo id: ')
-                category_id = input('Kategoria: ')
-                amount = input('Summa: ')
-                description = input('Selite: ')
+                house_id = self.ui.read('Talo id: ')
+                category_id = self.ui.read('Kategoria: ')
+                amount = self.ui.read('Summa: ')
+                description = self.ui.read('Selite: ')
                 new_transaction = self._transaction_repository.add_expense(house_id,category_id,amount,description)
             elif command == '3':
                 pass
@@ -101,4 +103,4 @@ class Menu:
             elif command == 'X':
                 break
             else:
-                print('Väärä syöte')
+                self.ui.print('Väärä syöte')
