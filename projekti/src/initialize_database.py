@@ -7,7 +7,7 @@ def drop_tables(connection):
         drop table if exists house;
     ''')
     cursor.execute('''
-        drop table if exists incomeExpense;
+        drop table if exists transactions;
     ''')
     cursor.execute('''
         drop table if exists category;
@@ -30,13 +30,14 @@ def create_tables(connection):
 
     ''')
     cursor.execute('''
-        create table incomeExpense (
-            incomeExpense_id INTEGER PRIMARY KEY,
+        create table transactions (
+            transaction_id INTEGER PRIMARY KEY,
             category_id INTEGER,
             house_id INTEGER,
             amount INTEGER,
-            income BOOLEAN,
-            expense BOOLEAN
+            description TEXT,
+            transaction_type TEXT
+            
         );
 
     ''')
@@ -51,12 +52,19 @@ def create_tables(connection):
 
     connection.commit()
 
+def add_categories(connection):
+    cursor = connection.cursor()
+    categories_to_add = [(1,'Yhtiövastike'),(2,'Pääomavastike'),(3,'Vesi'),(4,'Sähkö'),(5,'Vuokra tulo')]
+    cursor.executemany('INSERT INTO category VALUES (?,?)',categories_to_add)
+    connection.commit()
 
 def initialize_database():
     connection = get_database_connection()
 
     drop_tables(connection)
     create_tables(connection)
+    add_categories(connection)
+
 
 
 if __name__ == "__main__":
