@@ -1,25 +1,28 @@
+from repository.transaction_repository import TransactionsRepository
+
 class House:
-    def __init__(self,houseName,address,expenses=[],incomes=[]):
+    def __init__(self,id,houseName,address,expenses=[],incomes=[]):
+        self.id = id
         self.name = houseName
         self.address = address
         self.expenses = expenses
         self.incomes = incomes
 
-    def addExpense(self,amount,category,description):
+    def add_expense(self,amount,category,description):
         if amount>0:
             self.expenses.append({'amount':amount,'category':category,'description':description})
 
-    def addIncome(self,amount,category,description):
+    def add_income(self,amount,category,description):
         if amount>0:
             self.incomes.append({'amount':amount,'category':category,'description':description})
 
-    def editExpense(self):
+    def edit_expense(self):
         pass
 
-    def editIncome(self):
+    def edit_income(self):
         pass
 
-    def houseReport(self):
+    def house_report(self):
         incomes = sum([i.amount for i in self.incomes])
         expenses = sum([i.amount for i in self.expenses])
         profit = incomes-expenses
