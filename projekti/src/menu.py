@@ -105,8 +105,15 @@ class Menu:
         house = self.get_house_by_id(house_id)
         print(house)
         if house:
-            new_name = self.ui.read(f"Asunnon nimi ({house.name})") if not '' else house.name #ei toimi
-            new_address = self.ui.read(f"Asunnon osoite ({house.address})") if not '' else house.address #ei toimi
+            new_name = self.ui.read(f"Asunnon nimi ({house.name})") 
+            if new_name == '':
+                new_name = house.name
+            new_address = self.ui.read(f"Asunnon osoite ({house.address})")
+            if new_address == '':
+                new_address = house.address
+            updated_house = self._house_repository.edit_house_info(house_id,new_name,new_address)
+            self.ui.print('Päivitys onnistui')
+            self.setup_houses()
         else:
             self.ui.print('Asuntoa ei löytynyt')
 
@@ -118,29 +125,39 @@ class Menu:
         while True:
             command = self.ui.read('Komento: ')
 
-            if command == '1':
+            if command == '1': #new income
                 house_id = self.ui.read('Talo id: ')
                 house = self.get_house_by_id(house_id)
                 if house:
                     category_id = self.ui.read('Kategoria: ')
                     amount = self.ui.read('Summa: ')
                     description = self.ui.read('Selite: ')
-                    new_transaction = self._transaction_repository.add_income(house_id,category_id,amount,description)
+                    new_income = house.add_income(category_id,amount,description)
+                    if new_income is True:
+                        self.ui.print('Lisäys onnistui')
+                    else:
+                        self.ui.print('Lisäys epäonnistui')
                 else:
                     self.ui.print('Asuntoa ei löytynyt')
-            elif command == '2':
+
+            elif command == '2': #new expense
                 house_id = self.ui.read('Talo id: ')
                 house = self.get_house_by_id(house_id)
                 if house:
                     category_id = self.ui.read('Kategoria: ')
                     amount = self.ui.read('Summa: ')
                     description = self.ui.read('Selite: ')
-                    new_transaction = self._transaction_repository.add_expense(house_id,category_id,amount,description)
+                    new_expense = house.add_expense(category_id,amount,description)
+                    if new_expense is True:
+                        self.ui.print('Lisäys onnistui')
+                    else:
+                        self.ui.print('Lisäys epäonnistui')
                 else:
                     self.ui.print('Asuntoa ei löytynyt')
-            elif command == '3':
+                    
+            elif command == '3': #edit income
                 pass
-            elif command == '4':
+            elif command == '4': #edit expense
                 pass
             elif command == 'help':
                 self.print_transaction_commands()
