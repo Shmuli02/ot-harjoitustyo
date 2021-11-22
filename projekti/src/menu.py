@@ -77,7 +77,15 @@ class Menu:
                 self.ui.print('Väärä syöte. Apua saat komennolla (help)')
     
     def print_report(self):
-        pass
+        self.ui.print(f"{'Asunto':20}{'Tulot':20} Menot")
+        incomes = 0
+        expenses = 0
+        for house in self.houses:
+            report = house.house_report()
+            incomes += report['incomes']
+            expenses += report['expenses']
+            self.ui.print(f"{house.name} {report['incomes']:20} {report['expenses']:20}")
+        self.ui.print(f"Yht. {incomes:20} {expenses:20}")
 
     def print_houses(self):
         if len(self.houses) == 0:
