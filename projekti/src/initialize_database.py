@@ -13,9 +13,6 @@ def drop_tables(connection):
         drop table if exists category;
     ''')
 
-            
-        
-
     connection.commit()
 
 def create_tables(connection):
@@ -48,7 +45,6 @@ def create_tables(connection):
         );
 
     ''')
-
 
     connection.commit()
 

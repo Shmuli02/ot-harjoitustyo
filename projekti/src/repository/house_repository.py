@@ -22,7 +22,7 @@ class HouseRepository:
         )
 
         self._connection.commit()
-    
+
     def get_houses(self):
 
         cursor = self._connection.cursor()
@@ -32,14 +32,11 @@ class HouseRepository:
         rows = cursor.fetchall()
 
         return list(map(get_house_by_row, rows))
-    
+
     def edit_house_info(self,house_id,name,address):
         cursor = self._connection.cursor()
         cursor.execute(
             'UPDATE house SET name=?,address=? WHERE house_id=?',
             (name,address,house_id)
         )
-
-        house = cursor.fetchall()
-
-        return house
+        self._connection.commit()

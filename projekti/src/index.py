@@ -11,6 +11,5 @@ def main():
     menu = Menu(ui,house_repository,transaction_repository)
     menu.command_line_runner()
 
-
 if __name__ == '__main__':
     main()

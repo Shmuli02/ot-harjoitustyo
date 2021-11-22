@@ -5,5 +5,3 @@ class Transaction:
         self.amount = amount
         self.description = description
         self.transaction_type = transaction_type
-        
-

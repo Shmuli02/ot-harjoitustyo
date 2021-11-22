@@ -7,7 +7,7 @@ def get_transactions_by_row(row):
 class TransactionsRepository:
     def __init__(self, connection):
         self._connection = connection
-    
+
     def add_income(self,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
 
@@ -28,7 +28,7 @@ class TransactionsRepository:
         )
         self._connection.commit()
         return cursor.lastrowid
-    
+
     def get_transactions(self):
 
         cursor = self._connection.cursor()

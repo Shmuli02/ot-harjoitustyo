@@ -20,7 +20,7 @@ class Menu:
         self._house_repository = house_repository
         self._transaction_repository = transaction_repository
         self.setup_houses()
-    
+
     def setup_houses(self):
         self.houses = self._house_repository.get_houses()
         self.transactions = self._transaction_repository.get_transactions()
@@ -43,19 +43,16 @@ class Menu:
         self.ui.print('Tapahtumien komennot:')
         for command in self.transaction_commands:
             self.ui.print(f"{command['command']} {command['description']}")
-    
+
     def get_house_by_id(self,id):
         try:
             return [x for x in self.houses if x.id == int(id)][0] if not [] else None
         except:
             return None
-        
 
-    
     def command_line_runner(self):
-        
         self.print_main_commands()
-        
+
         while True:
             command = self.ui.read('komento: ')
 
@@ -75,7 +72,7 @@ class Menu:
                 break
             else:
                 self.ui.print('Väärä syöte. Apua saat komennolla (help)')
-    
+
     def print_report(self):
         self.ui.print(f"{'Asunto':20}{'Tulot':20} Menot")
         incomes = 0
@@ -105,7 +102,7 @@ class Menu:
         house = self.get_house_by_id(house_id)
         print(house)
         if house:
-            new_name = self.ui.read(f"Asunnon nimi ({house.name})") 
+            new_name = self.ui.read(f"Asunnon nimi ({house.name})")
             if new_name == '':
                 new_name = house.name
             new_address = self.ui.read(f"Asunnon osoite ({house.address})")
@@ -117,10 +114,8 @@ class Menu:
         else:
             self.ui.print('Asuntoa ei löytynyt')
 
-    
     def add_edit_transactions(self):
-        
-        
+
         self.print_transaction_commands()
         while True:
             command = self.ui.read('Komento: ')
@@ -154,7 +149,7 @@ class Menu:
                         self.ui.print('Lisäys epäonnistui')
                 else:
                     self.ui.print('Asuntoa ei löytynyt')
-                    
+
             elif command == '3': #edit income
                 pass
             elif command == '4': #edit expense
