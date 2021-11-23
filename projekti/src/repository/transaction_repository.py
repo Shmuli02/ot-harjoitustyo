@@ -51,6 +51,22 @@ class TransactionsRepository:
         row = cursor.fetchall()
         return list(map(get_transactions_by_row,row))
 
+    def edit_income(self,transaction_id,house_id,category_id,amount,description):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            'UPDATE transaction SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            (transaction_id,category_id,house_id,amount,description)
+        )
+        self._connection.commit()
+
+    def edit_expense(self,transaction_id,house_id,category_id,amount,description):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            'UPDATE transaction SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            (transaction_id,category_id,house_id,amount,description)
+        )
+        self._connection.commit()
+
     def delete_all(self):
         cursor = self._connection.cursor()
         cursor.execute('delete from transactions')
