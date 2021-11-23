@@ -1,8 +1,35 @@
-# Ohjelmistotekniikka
+# Vuokranseuranta sovellus
+Vuokranseuranta sovelluksen avulla käyttäjä voi pitää kirjaa vuokra asuntojen tuloista ja menoista. Käyttäjä näkee myös yhteemvedon kaikista menoista ja tuloista
 
-Ohjelmitotekniikka tehtävät
-Teksitä voi **lihavoida** tai *kursivoida*
+## Asennus
+1. Riippuvuuksien asennus komennolla
+```
+poetry install
+```
+2. Alustustoiminpiteet komennolla
+```
+poetry run invoke build
+```
+3. Käynnistä sovellus komennolla
+```
+poetry run python3 src/index.py
+```
 
-[gitlog.txt](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+(komennolla "poetry run invoke start" komentorivin syöte ei toimi kunnolla)
 
-[komentorivi.txt](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+## Muita toimintoja
+
+Testaus
+```
+poetry run invoke test
+```
+
+Testikattavuus
+```
+poetry run invoke coverage-report
+```
+
+Pylint
+```
+poetry run invoke lint
+```
