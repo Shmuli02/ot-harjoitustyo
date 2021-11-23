@@ -22,10 +22,10 @@ class House:
             return True
         return False
 
-    def edit_expense(self):
+    def edit_expense(self,expenses_id,amount,description):
         pass
 
-    def edit_income(self):
+    def edit_income(self,expenses_id,amount,description):
         pass
 
     def house_report(self):
