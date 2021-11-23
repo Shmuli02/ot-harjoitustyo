@@ -1,6 +1,10 @@
 # Vuokranseuranta sovellus
 Vuokranseuranta sovelluksen avulla käyttäjä voi pitää kirjaa vuokra asuntojen tuloista ja menoista. Käyttäjä näkee myös yhteemvedon kaikista menoista ja tuloista
 
+## Dokumentaatio
+- [Vaatimusmäärittely](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/projekti/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/projekti/dokumentaatio/tyoaikakirjanito.md)
+
 ## Asennus
 1. Riippuvuuksien asennus komennolla
 ```
