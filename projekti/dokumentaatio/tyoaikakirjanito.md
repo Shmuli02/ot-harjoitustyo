@@ -9,3 +9,5 @@
 | 17.11 | 3 | tulojen/menojen käsittely |
 | 18.11 | 1 | käyttöliittymä |
 | | 1 | ui |
+| 23.11 | 5 | graaffinen käyttöliittymä |
+| | 2 | ongelmien korjaamista |
