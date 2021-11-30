@@ -16,7 +16,7 @@ class Navbar:
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
@@ -43,7 +43,7 @@ class Navbar:
             text="Muokkaa asunon tietoja",
             command=self._handle_edit_house_info
         )
-        
+
         menu_button.grid(row=0, column=0)
         new_house_button.grid(row=0, column=1)
         transaction_menu_button.grid(row=0, column=2)

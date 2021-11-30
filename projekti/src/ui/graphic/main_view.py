@@ -12,7 +12,7 @@ class MainView:
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
@@ -22,12 +22,8 @@ class MainView:
 
         expense_label = ttk.Label(master=self._frame, text="Menot: ")
 
-
         heading_label.grid(row=1, column=0)
 
         income_label.grid(row=2, column=0)
 
         expense_label.grid(row=3, column=0)
-        
-        
-        

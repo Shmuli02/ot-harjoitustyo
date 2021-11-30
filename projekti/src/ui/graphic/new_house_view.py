@@ -12,7 +12,7 @@ class NewHouseView:
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         title_label = ttk.Label(master=self._frame, text="Uusi asunto")
@@ -29,7 +29,6 @@ class NewHouseView:
         )
 
         title_label.grid(row=0, column=0)
-        
 
         house_name_label.grid(row=2, column=0)
         house_name_entry.grid(row=2, column=1)
@@ -38,4 +37,3 @@ class NewHouseView:
         house_address_entry.grid(row=3, column=1)
 
         house_submit_button.grid(row=4, column=0, columnspan= 2)
-

@@ -14,13 +14,13 @@ class UI:
         self._show_navbar()
         self._show_navbar()
         self._show_main_view()
-        
+
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
 
         self._current_view = None
-    
+
     def _show_navbar(self):
         self._current_view = Navbar(
             self._root,
@@ -36,16 +36,16 @@ class UI:
 
     def _handle_main(self):
         self._show_main_view()
-    
+
     def _handle_transaction(self):
         self._show_transaction_view()
-    
+
     def _handle_edit_house_info(self):
         self._show_edit_house_info_view()
 
     def _show_transaction_view(self):
         self._hide_current_view()
-        
+
         self._current_view = TransactionView(
             self._root
         )
@@ -53,7 +53,7 @@ class UI:
 
     def _show_edit_house_info_view(self):
         self._hide_current_view()
-        
+
         self._current_view = EditHouseView(
             self._root
         )
