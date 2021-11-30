@@ -11,3 +11,4 @@
 | | 1 | ui |
 | 23.11 | 5 | graaffinen käyttöliittymä |
 | | 2 | ongelmien korjaamista |
+| 30.11 | 2 | testejä ja pieniä muutoksia |
