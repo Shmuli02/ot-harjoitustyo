@@ -9,6 +9,7 @@ def main():
     house_repository = HouseRepository(get_database_connection())
     transaction_repository = TransactionsRepository(get_database_connection())
     menu = Menu(ui,house_repository,transaction_repository)
+    menu.setup_houses()
     menu.command_line_runner()
 
 if __name__ == '__main__':

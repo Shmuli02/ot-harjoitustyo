@@ -19,7 +19,6 @@ class Menu:
         ]
         self._house_repository = house_repository
         self._transaction_repository = transaction_repository
-        self.setup_houses()
 
     def setup_houses(self):
         self.houses = self._house_repository.get_houses()
@@ -100,7 +99,6 @@ class Menu:
     def update_house_info(self):
         house_id=self.ui.read('Talo id: ')
         house = self.get_house_by_id(house_id)
-        print(house)
         if house:
             new_name = self.ui.read(f"Asunnon nimi ({house.name})")
             if new_name == '':

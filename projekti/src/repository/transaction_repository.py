@@ -54,7 +54,7 @@ class TransactionsRepository:
     def edit_income(self,transaction_id,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
         cursor.execute(
-            'UPDATE transaction SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            'UPDATE transactions SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
             (transaction_id,category_id,house_id,amount,description)
         )
         self._connection.commit()
@@ -62,7 +62,7 @@ class TransactionsRepository:
     def edit_expense(self,transaction_id,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
         cursor.execute(
-            'UPDATE transaction SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            'UPDATE transactions SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
             (transaction_id,category_id,house_id,amount,description)
         )
         self._connection.commit()

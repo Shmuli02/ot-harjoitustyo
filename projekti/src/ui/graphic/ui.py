@@ -61,7 +61,6 @@ class UI:
 
     def _show_main_view(self):
         self._hide_current_view()
-
         self._current_view = MainView(
             self._root
         )
