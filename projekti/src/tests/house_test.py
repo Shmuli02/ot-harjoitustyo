@@ -9,7 +9,6 @@ class TestHouse(unittest.TestCase):
         self.cursor.delete_all()
         self.cursor.create_house('testHouse','testAddress')
 
-
     def test_get_houses(self):
         houses = self.cursor.get_houses()
         self.assertEqual(len(houses),1)
@@ -18,3 +17,9 @@ class TestHouse(unittest.TestCase):
         self.cursor.create_house('testHouse2','testAddress2')
         houses = self.cursor.get_houses()
         self.assertEqual(len(houses),2)
+
+    def test_edit_house_info(self):
+        self.cursor.edit_house_info(1,'NewHouseName','NewHouseAddress')
+        house = self.cursor.get_house_by_id('1')[0]
+        self.assertEqual(house.name,'NewHouseName')
+        self.assertEqual(house.address,'NewHouseAddress')
