@@ -2,8 +2,9 @@
 Vuokranseuranta sovelluksen avulla käyttäjä voi pitää kirjaa vuokra asuntojen tuloista ja menoista. Käyttäjä näkee myös yhteemvedon kaikista menoista ja tuloista
 
 ## Dokumentaatio
-- [Vaatimusmäärittely](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/projekti/dokumentaatio/vaatimusmaarittely.md)
-- [Työaikakirjanpito](https://github.com/Shmuli02/ot-harjoitustyo/blob/master/projekti/dokumentaatio/tyoaikakirjanito.md)
+- [Arkkitehuuri](projekti/dokumentaatio/arkkitehtuuri.md)
+- [Vaatimusmäärittely](projekti/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](projekti/dokumentaatio/tyoaikakirjanito.md)
 
 ## Asennus
 1. Riippuvuuksien asennus komennolla
@@ -16,10 +17,8 @@ poetry run invoke build
 ```
 3. Käynnistä sovellus komennolla
 ```
-poetry run python3 src/index.py
+poetry run invoke start
 ```
-
-(komennolla "poetry run invoke start" komentorivin syöte ei toimi kunnolla)
 
 ## Muita toimintoja
 
@@ -37,3 +36,9 @@ Pylint
 ```
 poetry run invoke lint
 ```
+
+Komenorivi käyttöliittymä
+```
+poetry run invoke commandline
+```
+(invokessa on ongelma tekstin syötteessä. Komennolla `python3 src/index.py commandline` saa ongelman korjattua)

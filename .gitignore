@@ -15,3 +15,5 @@
 /projekti/htmlcov
 .coverage
 /projekti/src/data/database.sqlite
+/projekti/src/services/__pycache__
+/projekti/src/ui/graphic/.pytest_cache
