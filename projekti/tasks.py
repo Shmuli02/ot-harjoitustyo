@@ -1,8 +1,12 @@
 from invoke import task
 
 @task
+def commandline(ctx):
+    ctx.run("python3 src/index.py commandline")
+
+@task
 def start(ctx):
-    ctx.run("python3 src/index.py")
+    ctx.run("python3 src/index.py graphic")
 
 @task
 def coverage(ctx):
