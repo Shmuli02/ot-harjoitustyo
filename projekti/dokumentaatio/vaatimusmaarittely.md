@@ -5,12 +5,14 @@ Vuokra seuranta sovelluksen avulla käyttäjä voi pitää kirjaa asuntojen tulo
 
 # Käyttäjät
 
-Sovelluksessa on vain yksi käyttäjärooli. Myöhemmin saatetaan lisätä muita käyttäjärooleja.
+Sovelluksessa on vain yksi käyttäjärooli.
 
 ## toiminnallisuudet
 
 
-- Käyttäjä voi luoda uuden asunnon
-- Käyttäjä voi lisätä asunnolle menoja ja tuloja
-- Käyttäjä näkee asunnon tulot ja menot yhteensä
-- Käyttäjä näkee yhteenvedossa kaikkien asuntojen tulot ja menot
+- (tehty) Käyttäjä voi luoda uuden asunnon
+- (tehty) Käyttäjä voi lisätä asunnolle menoja ja tuloja
+- (tehty) Käyttäjä näkee asunnon tulot ja menot yhteensä
+- (tehty) Käyttäjä näkee yhteenvedossa kaikkien asuntojen tulot ja menot
+- (tehty) Käyttäjä voi muokata asunnon tietoja
+
