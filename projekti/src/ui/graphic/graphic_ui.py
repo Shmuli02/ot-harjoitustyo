@@ -1,11 +1,9 @@
-from tkinter import Menu, Tk
-from main_view import MainView
-from new_house_view import NewHouseView
-from transaction_view import TransactionView
-from edit_house_view import EditHouseView
-from navbar import Navbar
+from .main_view import MainView
+from .new_house_view import NewHouseView
+from .transaction_view import TransactionView
+from .navbar import Navbar
 
-class UI:
+class GraphicUI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
@@ -26,9 +24,7 @@ class UI:
             self._root,
             self._handle_main,
             self._handle_new_house,
-            self._handle_transaction,
-            self._handle_edit_house_info
-        )
+            self._handle_transaction        )
         self._current_view.pack()
 
     def _handle_new_house(self):
@@ -40,21 +36,10 @@ class UI:
     def _handle_transaction(self):
         self._show_transaction_view()
 
-    def _handle_edit_house_info(self):
-        self._show_edit_house_info_view()
-
     def _show_transaction_view(self):
         self._hide_current_view()
 
         self._current_view = TransactionView(
-            self._root
-        )
-        self._current_view.pack()
-
-    def _show_edit_house_info_view(self):
-        self._hide_current_view()
-
-        self._current_view = EditHouseView(
             self._root
         )
         self._current_view.pack()
@@ -75,11 +60,3 @@ class UI:
         )
 
         self._current_view.pack()
-
-window = Tk()
-window.title("Vuokran seuranta")
-
-ui = UI(window)
-ui.start()
-
-window.mainloop()
