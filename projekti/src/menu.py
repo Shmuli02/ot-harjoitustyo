@@ -5,15 +5,13 @@ class Menu:
             {'command':'1','description':'Raportti'},
             {'command':'2','description':'Asunnot'},
             {'command':'3','description':'Luo uusi asunto'},
-            {'command':'4','description':'Lisää/muokkaa asunnon tuloja ja menoja'},
+            {'command':'4','description':'Lisää tuloja ja menoja'},
             {'command':'5','description':'Muokkaa asunnon tietoja'},
             {'command':'X','description':'Poistu'},
         ]
         self.transaction_commands = [
             {'command':'1','description':'Uusi tulo'},
             {'command':'2','description':'Uusi meno'},
-            {'command':'3','description':'muokkaa tuloa'},
-            {'command':'4','description':'muokkaa menoa'},
             {'command':'X','description':'Palaa päävalikkoon'}
 
         ]
@@ -128,6 +126,7 @@ class Menu:
                     new_income = house.add_income(category_id,amount,description)
                     if new_income is True:
                         self.ui.print('Lisäys onnistui')
+                        self.setup_houses()
                     else:
                         self.ui.print('Lisäys epäonnistui')
                 else:
@@ -143,15 +142,11 @@ class Menu:
                     new_expense = house.add_expense(category_id,amount,description)
                     if new_expense is True:
                         self.ui.print('Lisäys onnistui')
+                        self.setup_houses()
                     else:
                         self.ui.print('Lisäys epäonnistui')
                 else:
                     self.ui.print('Asuntoa ei löytynyt')
-
-            elif command == '3': #edit income
-                pass
-            elif command == '4': #edit expense
-                pass
             elif command == 'help':
                 self.print_transaction_commands()
             elif command == 'X':
