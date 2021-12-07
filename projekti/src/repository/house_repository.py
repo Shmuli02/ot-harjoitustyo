@@ -40,3 +40,12 @@ class HouseRepository:
             (name,address,house_id)
         )
         self._connection.commit()
+
+    def get_house_by_id(self,house_id):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            'SELECT * FROM house WHERE house_id=?',
+            (house_id)
+        )
+        rows = cursor.fetchall()
+        return list(map(get_house_by_row, rows))

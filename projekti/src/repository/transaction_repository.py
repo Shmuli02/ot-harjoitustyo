@@ -1,7 +1,15 @@
 from transaction import Transaction
 
 def get_transactions_by_row(row):
-    return Transaction(row['house_id'],row['category_id'],row['amount'],row['description'],row['transaction_type']) if row else None
+    return Transaction(
+        row['house_id'],
+        row['category_id'],
+        row['amount'],
+        row['description'],
+        row['transaction_type']) if row else None
+
+def get_categories_by_row(row):
+    return {'category_id':row['category_id'],'category':row['category']}
 
 
 class TransactionsRepository:
@@ -10,9 +18,14 @@ class TransactionsRepository:
 
     def add_income(self,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
-
+        amount = float(str(amount).replace(',','.'))
         cursor.execute(
-            'INSERT INTO transactions (category_id,house_id,amount,description,transaction_type) values (?,?,?,?,"income")',
+            '''
+            INSERT INTO transactions
+            (category_id,house_id,amount,description,transaction_type)
+            values
+            (?,?,?,?,"income")
+            ''',
             (category_id,house_id,amount,description)
         )
 
@@ -21,9 +34,13 @@ class TransactionsRepository:
 
     def add_expense(self,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
-
+        amount = float(str(amount).replace(',','.'))
         cursor.execute(
-            'INSERT INTO transactions (category_id,house_id,amount,description,transaction_type) values (?,?,?,?,"expense")',
+            '''
+            INSERT INTO transactions
+            (category_id,house_id,amount,description,transaction_type)
+            values (?,?,?,?,"expense")
+            ''',
             (category_id,house_id,amount,description)
         )
         self._connection.commit()
@@ -41,20 +58,31 @@ class TransactionsRepository:
 
     def get_incomes(self):
         cursor = self._connection.cursor()
-        cursor.execute('SELECT * FROM transactions WHERE transaction_type="income"')
+        cursor.execute(
+            '''
+            SELECT * FROM transactions
+            WHERE transaction_type="income"
+            ''')
         row = cursor.fetchall()
         return list(map(get_transactions_by_row,row))
 
     def get_expenses(self):
         cursor = self._connection.cursor()
-        cursor.execute('SELECT * FROM transactions WHERE transaction_type="expense"')
+        cursor.execute(
+            '''
+            SELECT * FROM transactions
+            WHERE transaction_type="expense"
+            ''')
         row = cursor.fetchall()
         return list(map(get_transactions_by_row,row))
 
     def edit_income(self,transaction_id,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
         cursor.execute(
-            'UPDATE transactions SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            '''
+            UPDATE transactions
+            SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?
+            ''',
             (transaction_id,category_id,house_id,amount,description)
         )
         self._connection.commit()
@@ -62,7 +90,10 @@ class TransactionsRepository:
     def edit_expense(self,transaction_id,house_id,category_id,amount,description):
         cursor = self._connection.cursor()
         cursor.execute(
-            'UPDATE transactions SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?',
+            '''
+            UPDATE transactions
+            SET transaction_id=?, category_id=?, house_id=?, amount=?, description=?
+            ''',
             (transaction_id,category_id,house_id,amount,description)
         )
         self._connection.commit()
@@ -71,3 +102,9 @@ class TransactionsRepository:
         cursor = self._connection.cursor()
         cursor.execute('delete from transactions')
         self._connection.commit()
+
+    def get_categories(self):
+        cursor = self._connection.cursor()
+        cursor.execute('SELECT * from category')
+        rows = cursor.fetchall()
+        return list(map(get_categories_by_row,rows))
