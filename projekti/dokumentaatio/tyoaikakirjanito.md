@@ -15,3 +15,4 @@
 | 2.12 | 5 | graafinen käyttöliittymä |
 | 3.12 | 1 | korjauksia graafisessa käyttöliittymässä |
 | 7.12 | 3 | dokumentointia ja pieniä muutoksia |
+| 13.12 | 2 | docsting |
