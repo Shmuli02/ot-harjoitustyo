@@ -41,4 +41,4 @@ Komenorivi käyttöliittymä
 ```
 poetry run invoke commandline
 ```
-(invokessa on ongelma tekstin syötteessä. Komennolla `python3 src/index.py commandline` saa ongelman korjattua)
+(invokessa on ongelma tekstin syötteessä. Komennolla `poetry run python3 src/index.py commandline` saa ongelman korjattua)
