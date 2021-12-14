@@ -10,11 +10,11 @@ DATABASE_FILENAME = database.sqlite
 
 ## Ohjelman käynnistäminen
 
-Asenna riippuvuudet ennen sohjelman käynnistämistä
+Asenna riippuvuudet ennen ohjelman käynnistämistä
 ```
 poetry install
 ```
-Alkutoimenpiteet komennolla
+Suorita alkutoimenpiteet komennolla
 ```
 poetry run invoke build
 ```
