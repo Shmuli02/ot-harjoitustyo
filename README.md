@@ -5,6 +5,7 @@ Vuokranseuranta sovelluksen avulla käyttäjä voi pitää kirjaa vuokra asuntoj
 - [Arkkitehuuri](projekti/dokumentaatio/arkkitehtuuri.md)
 - [Vaatimusmäärittely](projekti/dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](projekti/dokumentaatio/tyoaikakirjanito.md)
+- [Käyttöohje](projekti/dokumentaatio/kayttoohje.md)
 
 ## Asennus
 1. Riippuvuuksien asennus komennolla
