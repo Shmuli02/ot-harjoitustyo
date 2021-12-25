@@ -18,12 +18,6 @@ class House:
         new_transaction = self._transaction_repository.add_expense(self.id,category_id,amount,description)
         return True
 
-    def edit_expense(self,expenses_id,amount,description):
-        pass
-
-    def edit_income(self,expenses_id,amount,description):
-        pass
-
     def house_report(self):
         incomes = sum([i.amount for i in self.incomes])
         expenses = sum([i.amount for i in self.expenses])

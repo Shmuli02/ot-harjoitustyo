@@ -13,8 +13,10 @@ class TransactionService:
         """init of transaction service
 
         Args:
-            house_repository (class, optional): house repository. Defaults to default_house_repository(get_database_connection()).
-            transaction_repository (class, optional): transaction repository. Defaults to default_transaction_repository(get_database_connection()).
+            house_repository (class, optional): house repository.
+                Defaults to default_house_repository(get_database_connection()).
+            transaction_repository (class, optional): transaction repository.
+                Defaults to default_transaction_repository(get_database_connection()).
         """
         self.house_repository = house_repository
         self.transaction_repository = transaction_repository
@@ -27,7 +29,7 @@ class TransactionService:
             category_id (int): category id
             amount (float): amount
             description (str): description of the new transaction
-            transaction_type (str): 'income' or 'expense' 
+            transaction_type (str): 'income' or 'expense'
         """
         if transaction_type == 'income':
             self.transaction_repository.add_income(house_id,category_id,amount,description)

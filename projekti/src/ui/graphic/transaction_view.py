@@ -21,7 +21,7 @@ class TransactionView:
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _handle_new_transaction(self):
         if self._transaction_type_entry.get() == 'Tulo':
             transaction_type = 'income'

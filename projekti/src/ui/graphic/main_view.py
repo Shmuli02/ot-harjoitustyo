@@ -20,7 +20,6 @@ class MainView:
             no_house_label = ttk.Label(master=self._frame, text="Ei asuntoja.")
             no_house_label.grid(row=1, column=0)
         else:
-            
 
             heading_label = ttk.Label(master=self._frame, text="Asunto")
 
