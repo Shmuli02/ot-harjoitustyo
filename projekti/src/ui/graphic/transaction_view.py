@@ -44,13 +44,15 @@ class TransactionView:
         self._transaction_type_entry = ttk.Combobox(master=self._frame, values=['Tulo','Meno'])
 
         house_label = ttk.Label(master=self._frame, text="Asunto")
-        self._house_entry= ttk.Combobox(master=self._frame,values=[house.name for house in self._houses])
+        self._house_entry= ttk.Combobox(master=self._frame,
+            values=[house.name for house in self._houses])
 
         amount_label = ttk.Label(master=self._frame, text="Summma")
         self._amount_entey= ttk.Entry(master=self._frame)
 
         category_label = ttk.Label(master=self._frame, text="Kategoria")
-        self._category_entry = ttk.Combobox(master=self._frame, values=[category['category'] for category in self._categories])
+        self._category_entry = ttk.Combobox(master=self._frame,
+            values=[category['category'] for category in self._categories])
 
         description_label = ttk.Label(master=self._frame, text="Selite")
         self._description_entry = ttk.Entry(master=self._frame)

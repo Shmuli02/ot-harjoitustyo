@@ -50,7 +50,12 @@ def create_tables(connection):
 
 def add_categories(connection):
     cursor = connection.cursor()
-    categories_to_add = [(1,'Yhtiövastike'),(2,'Pääomavastike'),(3,'Vesi'),(4,'Sähkö'),(5,'Vuokra tulo')]
+    categories_to_add = [
+        (1,'Yhtiövastike'),
+        (2,'Pääomavastike'),
+        (3,'Vesi'),
+        (4,'Sähkö'),
+        (5,'Vuokra tulo')]
     cursor.executemany('INSERT INTO category VALUES (?,?)',categories_to_add)
     connection.commit()
 

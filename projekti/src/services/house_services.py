@@ -13,8 +13,10 @@ class HouseService:
         """init house service
 
         Args:
-            house_repository (class, optional): house repository. Defaults to default_house_repository(get_database_connection()).
-            transaction_repository (class, optional): transaction repository. Defaults to default_transaction_repository(get_database_connection()).
+            house_repository (class, optional): house repository.
+                Defaults to default_house_repository(get_database_connection()).
+            transaction_repository (class, optional): transaction repository.
+                Defaults to default_transaction_repository(get_database_connection()).
         """
         self.house_repository = house_repository
         self.transaction_repository = transaction_repository

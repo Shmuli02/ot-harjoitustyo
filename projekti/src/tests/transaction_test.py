@@ -5,7 +5,7 @@ from repository.transaction_repository import TransactionsRepository
 from services.transaction_services import TransactionService
 
 
-class TestTransactionsRepository(unittest.TestCase):
+class TestTransactions(unittest.TestCase):
     def setUp(self):
         self.cursor = TransactionsRepository(get_database_connection())
         self.cursor.delete_all()
