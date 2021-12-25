@@ -2,12 +2,14 @@ import unittest
 
 from database_connection import get_database_connection
 from repository.transaction_repository import TransactionsRepository
+from services.transaction_services import TransactionService
 
 
-class TestIncomeExpence(unittest.TestCase):
+class TestTransactionsRepository(unittest.TestCase):
     def setUp(self):
         self.cursor = TransactionsRepository(get_database_connection())
         self.cursor.delete_all()
+        self.transaction_service = TransactionService()
 
     def test_add_income(self):
         self.cursor.add_income(1,1,670,'Vuokra tulo')
@@ -42,3 +44,22 @@ class TestIncomeExpence(unittest.TestCase):
         self.assertEqual(len(expenses),1)
         self.assertEqual(expenses[0].amount,204.76)
         self.assertEqual(expenses[0].description,'Vastike + vesi')
+
+    def test_transaction_service_add_income(self):
+        self.transaction_service.add_transaction(1,5,627.86,'Vuokra','income')
+        new_transaction = self.cursor.get_transactions()[0]
+        self.assertEqual(new_transaction.house_id,1)
+        self.assertEqual(new_transaction.category,5)
+        self.assertEqual(new_transaction.amount,627.86)
+        self.assertEqual(new_transaction.description,'Vuokra')
+        self.assertEqual(new_transaction.transaction_type,'income')
+
+
+    def test_transaction_service_add_expense(self):
+        self.transaction_service.add_transaction(1,1,228.54,'Vastike','expense')
+        new_transaction = self.cursor.get_transactions()[0]
+        self.assertEqual(new_transaction.house_id,1)
+        self.assertEqual(new_transaction.category,1)
+        self.assertEqual(new_transaction.amount,228.54)
+        self.assertEqual(new_transaction.description,'Vastike')
+        self.assertEqual(new_transaction.transaction_type,'expense')
