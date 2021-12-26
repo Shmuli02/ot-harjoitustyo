@@ -2,12 +2,16 @@
 Vuokranseuranta sovelluksen avulla käyttäjä voi pitää kirjaa vuokra asuntojen tuloista ja menoista. Käyttäjä näkee myös yhteemvedon kaikista menoista ja tuloista
 
 ## Dokumentaatio
-- [Arkkitehuuri](projekti/dokumentaatio/arkkitehtuuri.md)
+- [Käyttöohje](projekti/dokumentaatio/kayttoohje.md)
+- [Testausdokumentti](projekti/dokumentaatio/testaus.md)
+- [Arkkitehtuurikuvaus](projekti/dokumentaatio/arkkitehtuuri.md)
 - [Vaatimusmäärittely](projekti/dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](projekti/dokumentaatio/tyoaikakirjanito.md)
-- [Käyttöohje](projekti/dokumentaatio/kayttoohje.md)
 
 ## Asennus
+
+Siirry kansioon `projekti`
+
 1. Riippuvuuksien asennus komennolla
 ```
 poetry install
