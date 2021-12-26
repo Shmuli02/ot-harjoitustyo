@@ -15,6 +15,8 @@
 | 2.12 | 5 | graafinen käyttöliittymä |
 | 3.12 | 1 | korjauksia graafisessa käyttöliittymässä |
 | 7.12 | 3 | dokumentointia ja pieniä muutoksia |
-| 13.12 | 2 | docsting |
+| 13.12 | 2 | docsting |
 | 14.12 | 2 | dokumentaatio |
-| yht. | 39||
+| 25.12 | 2 | dokumentointia ja viimeistelyä |
+| 26.12 | 3 | dokumentointia ja viimeistelyä |
+| yht. | 44||

@@ -16,3 +16,8 @@ Sovelluksessa on vain yksi käyttäjärooli.
 - (tehty) Käyttäjä näkee yhteenvedossa kaikkien asuntojen tulot ja menot
 - (tehty) Käyttäjä voi muokata asunnon tietoja
 
+## Jatkokehitysideoita
+- Tulojen je menojen yksityiskohtaisempi näyttäminen
+- Automaattiset toistuvat tulot ja menot
+- Tulojen ja menojen muokkaaminen
+- Tarkempia tietoja asunnosta
