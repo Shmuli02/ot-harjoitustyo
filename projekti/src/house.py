@@ -11,11 +11,13 @@ class House:
         self._transaction_repository = TransactionsRepository(get_database_connection())
 
     def add_income(self,category_id,amount,description):
-        new_transaction = self._transaction_repository.add_income(self.id,category_id,amount,description)
+        new_transaction = self._transaction_repository.add_income(self.id,
+            category_id,amount,description)
         return True
 
     def add_expense(self,category_id,amount,description):
-        new_transaction = self._transaction_repository.add_expense(self.id,category_id,amount,description)
+        new_transaction = self._transaction_repository.add_expense(self.id,
+            category_id,amount,description)
         return True
 
     def house_report(self):
