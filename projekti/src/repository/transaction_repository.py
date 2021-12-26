@@ -37,18 +37,19 @@ class TransactionsRepository:
         """
         cursor = self._connection.cursor()
         amount = float(str(amount).replace(',','.'))
-        cursor.execute(
-            '''
-            INSERT INTO transactions
-            (category_id,house_id,amount,description,transaction_type)
-            values
-            (?,?,?,?,"income")
-            ''',
-            (category_id,house_id,amount,description)
-        )
+        if house_id != '' and category_id != '':
+            cursor.execute(
+                '''
+                INSERT INTO transactions
+                (category_id,house_id,amount,description,transaction_type)
+                values
+                (?,?,?,?,"income")
+                ''',
+                (category_id,house_id,amount,description)
+            )
 
-        self._connection.commit()
-        return cursor.lastrowid
+            self._connection.commit()
+            return cursor.lastrowid
 
     def add_expense(self,house_id,category_id,amount,description):
         """Add new expense to db
@@ -64,16 +65,18 @@ class TransactionsRepository:
         """
         cursor = self._connection.cursor()
         amount = float(str(amount).replace(',','.'))
-        cursor.execute(
-            '''
-            INSERT INTO transactions
-            (category_id,house_id,amount,description,transaction_type)
-            values (?,?,?,?,"expense")
-            ''',
-            (category_id,house_id,amount,description)
-        )
-        self._connection.commit()
-        return cursor.lastrowid
+        if house_id != '' and category_id != '':
+            cursor.execute(
+                '''
+                INSERT INTO transactions
+                (category_id,house_id,amount,description,transaction_type)
+                values (?,?,?,?,"expense")
+                ''',
+                (category_id,house_id,amount,description)
+            )
+            self._connection.commit()
+            return cursor.lastrowid
+        return
 
     def get_transactions(self):
         """get all transaction

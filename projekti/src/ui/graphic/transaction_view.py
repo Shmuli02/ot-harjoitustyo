@@ -27,8 +27,14 @@ class TransactionView:
             transaction_type = 'income'
         else:
             transaction_type = 'expense'
-        house = [house.id for house in self._houses if house.name == self._house_entry.get()][0]
-        category = [category['category_id'] for category in self._categories if category['category'] == self._category_entry.get()][0]
+        try:
+            house = [house.id for house in self._houses if house.name == self._house_entry.get()][0]
+        except IndexError:
+            return
+        try:
+            category = [category['category_id'] for category in self._categories if category['category'] == self._category_entry.get()][0]
+        except IndexError:
+            return
         amount = self._amount_entey.get()
         description = self._description_entry.get()
         transaction_service.add_transaction(house,category,amount,description,transaction_type)
